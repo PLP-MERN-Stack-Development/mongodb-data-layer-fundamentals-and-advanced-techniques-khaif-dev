@@ -154,7 +154,7 @@ async function queryDatabase(){
          console.log(await db.collection('books').find({ author: "J.K. Rowling", published_year: { $gt: 1990 } }).explain("executionStats"));
 
     }catch(err){
-        console.log("error", err)
+        console.error("error", err)
     }finally{
         await client.close();
         console.log("diconnected");
